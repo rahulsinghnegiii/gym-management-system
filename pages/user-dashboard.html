@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - GYM Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Add styling for the membership details */
+        #membership-details {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #membership-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .membership-option {
+            padding: 15px;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .membership-option:hover {
+            transform: scale(1.05);
+        }
+
+        .membership-option h4 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .membership-option p {
+            font-size: 1.1em;
+            color: #7f8c8d;
+        }
+
+        .membership-option p.price {
+            font-weight: bold;
+            color: #27ae60;
+            margin-top: 10px;
+        }
+
+        /* Additional styling for the dashboard */
+        .user-dashboard-container header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #34495e;
+            color: white;
+        }
+
+        .user-dashboard-container header button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .user-dashboard-container header button:hover {
+            background-color: #c0392b;
+        }
+
+        main section {
+            margin: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-dashboard-container">
+        <header>
+            <h1>User Dashboard</h1>
+            <span id="userEmail"></span>
+            <button id="logoutBtn">Logout</button>
+        </header>
+
+        <main>
+            <section>
+                <h2>Welcome, <span id="userName"></span>!</h2>
+                <p>This is your dashboard where you can manage your profile and view your activities.</p>
+            </section>
+
+            <!-- Search Records Section -->
+            <section>
+                <h3>Search Records</h3>
+                <input type="text" id="searchInput" placeholder="Enter name or email">
+                <button id="searchBtn">Search</button>
+                <div id="searchResults"></div>
+            </section>
+
+            <!-- Membership Details Section -->
+            <section id="membership-details">
+                <h3>Membership Options</h3>
+                <div id="membership-list">
+                    <div class="membership-option">
+                        <h4>Basic Membership</h4>
+                        <p>Access to gym facilities during working hours.</p>
+                        <p class="price">Price: $30/month</p>
+                    </div>
+                    <div class="membership-option">
+                        <h4>Premium Membership</h4>
+                        <p>24/7 access to gym facilities, personal training sessions, and classes.</p>
+                        <p class="price">Price: $50/month</p>
+                    </div>
+                    <div class="membership-option">
+                        <h4>Family Membership</h4>
+                        <p>Access for up to 4 family members.</p>
+                        <p class="price">Price: $100/month</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script type="module" src="../js/user-dashboard.js"></script>
+</body>
+</html>

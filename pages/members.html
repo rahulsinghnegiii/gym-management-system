@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Management - Gym Management System</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Adjust path based on structure -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .members-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4e54c8;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+
+        .member-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .member-form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .member-form input {
+            padding: 12px;
+            width: 300px;
+            border: 2px solid #4e54c8;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+            font-size: 1em;
+        }
+
+        .member-form input:focus {
+            border-color: #8f94fb;
+            outline: none;
+        }
+
+        .btn-submit {
+            padding: 12px 30px;
+            background-color: #4e54c8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1em;
+        }
+
+        .btn-submit:hover {
+            background-color: #8f94fb;
+        }
+
+        .members-list {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .member-item {
+            background: #f4f6ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            text-align: left;
+            position: relative;
+        }
+
+        .member-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #4e54c8;
+        }
+
+        .member-item p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .member-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .btn-edit, .btn-delete {
+            background-color: #4e54c8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+        }
+
+        .btn-edit:hover {
+            background-color: #8f94fb;
+        }
+
+        .btn-delete {
+            background-color: #e74c3c;
+        }
+
+        .btn-delete:hover {
+            background-color: #c0392b;
+        }
+
+        @media (max-width: 768px) {
+            .members-container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .member-form input {
+                width: 100%;
+            }
+
+            .members-list {
+                flex-direction: column;
+            }
+
+            .member-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="members-container">
+        <h1>Manage Members</h1>
+
+        <!-- Form to add new members -->
+        <form id="addMemberForm" class="member-form">
+            <label for="memberName">Member Name:</label>
+            <input type="text" id="memberName" placeholder="Enter member name" required>
+            <label for="memberEmail">Member Email:</label>
+            <input type="email" id="memberEmail" placeholder="Enter member email" required>
+            <button type="submit" class="btn-submit">Add Member</button>
+        </form>
+
+        <!-- List to display members -->
+        <div id="membersList" class="members-list"></div>
+    </div>
+
+    <script type="module" src="../js/members.js"></script> <!-- JavaScript for members management -->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - GYM Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Loading indicator styles */
+        #loadingIndicator {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            color: #333;
+        }
+        #add-member {
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>User Dashboard</h1>
+            <p>Welcome, <span id="userEmail"></span></p>
+            <button id="logoutBtn">Logout</button>
+        </header>
+        
+        <section id="notifications">
+            <h2>Notifications</h2>
+            <ul id="notificationList"></ul>
+        </section>
+
+        <section id="payment-history">
+            <h2>Payment History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="paymentHistoryTable">
+                    <!-- Payment history will be populated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="add-member">
+            <h2>Add New Member</h2>
+            <form id="addMemberForm">
+                <input type="text" id="memberName" placeholder="Member Name" required>
+                <input type="email" id="memberEmail" placeholder="Member Email" required>
+                <button type="submit">Add Member</button>
+            </form>
+        </section>
+
+        <section id="members">
+            <h2>Members</h2>
+            <ul id="membersList"></ul>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator">Loading...</div>
+    </div>
+
+    <script type="module" src="../js/dashboard.js"></script>
+</body>
+</html>

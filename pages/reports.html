@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Gym Management System</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Adjust path based on structure -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .reports-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        #exportReportBtn {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        #exportReportBtn:hover {
+            background-color: #45a049;
+        }
+
+        #reportsList {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .report-section {
+            margin-bottom: 20px;
+            background-color: #fafafa;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .report-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .report-item:last-child {
+            border-bottom: none; /* Remove border for last item */
+        }
+
+        .report-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .report-detail {
+            font-size: 1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="reports-container">
+        <h1>Reports</h1>
+        <button id="exportReportBtn">Export Reports</button>
+        <div id="reportsList">
+            <div class="report-section">
+                <h2 class="report-title">Members Report</h2>
+                <div class="report-item" id="membersReportList"></div>
+            </div>
+            <div class="report-section">
+                <h2 class="report-title">Bills Report</h2>
+                <div class="report-item" id="billsReportList"></div>
+            </div>
+            <div class="report-section">
+                <h2 class="report-title">Notifications Report</h2>
+                <div class="report-item" id="notificationsReportList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../js/reports.js"></script> <!-- JavaScript for reports management -->
+</body>
+</html>

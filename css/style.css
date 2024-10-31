@@ -1,0 +1,237 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../images/hero-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Shared Styles */
+.container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Index Page Styles */
+.hero-section {
+    background-image: url('../images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 0;
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.hero-section button {
+    font-size: 1.2em;
+}
+
+.services-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.services-section h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.service-card {
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+    margin: 0 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.service-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Login Page Styles */
+.login-container, .register-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent for modern look */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+    margin: 50px auto; /* Centering the container */
+}
+
+.login-container h1,
+.register-container h1 {
+    margin-bottom: 20px;
+    color: #333; /* Darker color for better visibility */
+    font-size: 2.5em;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em; /* Increased font size for better readability */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    border-color: #007bff; /* Blue border on focus */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Register Page Styles */
+.register-container {
+    padding: 40px;
+}
+
+.register-container input[type="text"] {
+    width: 100%;
+}
+
+.register-container button {
+    padding: 12px;
+    background-color: #28a745; /* Green color for register button */
+}
+
+.register-container button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-container, .register-container {
+        width: 90%; /* Full width on small screens */
+        padding: 20px;
+    }
+
+    .login-container h1,
+    .register-container h1 {
+        font-size: 2em; /* Smaller heading on mobile */
+    }
+
+    .service-card {
+        width: 100%; /* Full width for service cards on mobile */
+        margin: 10px 0; /* Adjust margin for better spacing */
+    }
+}
+
+
+#membership-details {
+    margin-top: 20px;
+}
+
+.membership-option {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.membership-option h3 {
+    margin-top: 0;
+}
+
+
+#membership-overview {
+    margin-top: 30px; /* Add some space above the membership section */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    border-radius: 10px; /* Rounded corners for better aesthetics */
+}
+
+.membership-option {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background for membership options */
+}
+
+.membership-option h3 {
+    margin-top: 0; /* Remove top margin for better alignment */
+    color: #007bff; /* Change color to match the theme */
+}

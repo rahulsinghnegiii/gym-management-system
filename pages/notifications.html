@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Notifications - Gym Management System</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Adjust path based on structure -->
+    <style>
+        /* Additional styles for better layout and interactivity */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .notifications-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        #addNotificationBtn {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        #addNotificationBtn:hover {
+            background-color: #45a049;
+        }
+
+        #notificationsList {
+            margin-top: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .notification-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fafafa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .notification-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-text {
+            font-size: 1.1rem;
+            color: #555;
+            flex: 1; /* Allow the text to grow */
+            margin-right: 15px; /* Space between text and buttons */
+        }
+
+        .notification-date {
+            font-size: 0.9rem;
+            color: #777;
+            margin-left: 10px;
+        }
+
+        .btn-edit, .btn-delete {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-edit:hover {
+            background-color: #1976d2;
+        }
+
+        .btn-delete {
+            background-color: #f44336;
+        }
+
+        .btn-delete:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="notifications-container">
+        <h1>Manage Notifications</h1>
+        <button id="addNotificationBtn">Add Notification</button>
+        <ul id="notificationsList"></ul>
+    </div>
+
+    <script type="module" src="../js/notifications.js"></script> <!-- JavaScript for notifications management -->
+</body>
+</html>

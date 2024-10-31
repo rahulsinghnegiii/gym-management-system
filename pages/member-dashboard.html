@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Dashboard - GYM Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Additional styles for better visuals */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .member-dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        header button {
+            padding: 10px 20px;
+            background-color: white;
+            color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        header button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: #007BFF;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table th, table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        /* Cards for membership details and bill notifications */
+        #membershipDetails, #billNotifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1 1 300px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        /* Hover effect for cards */
+        .card:hover {
+            background-color: #ff0000;
+            color: white;
+            transition: 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="member-dashboard-container">
+        <header>
+            <h1>Member Dashboard</h1>
+            <p>Welcome, <span id="memberName"></span></p>
+            <button id="logoutBtn">Logout</button>
+        </header>
+
+        <section id="profile">
+            <h2>Your Profile</h2>
+            <p>Email: <span id="memberEmail"></span></p>
+        </section>
+
+        <section id="payment-history">
+            <h2>Payment History</h2>
+            <table id="paymentHistoryTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Payment history will be populated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Membership details section as cards -->
+        <section id="membership-details">
+            <h2>Your Membership</h2>
+            <div id="membershipDetails">
+                <div class="card">
+                    <h3>Membership Type</h3>
+                    <p id="membershipType">Premium</p>
+                </div>
+                <div class="card">
+                    <h3>Start Date</h3>
+                    <p id="membershipStartDate">01/01/2024</p>
+                </div>
+                <div class="card">
+                    <h3>End Date</h3>
+                    <p id="membershipEndDate">31/12/2024</p>
+                </div>
+                <div class="card">
+                    <h3>Status</h3>
+                    <p id="membershipStatus">Active</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bill receipts section -->
+        <section id="bill-receipts">
+            <h2>Bill Receipts</h2>
+            <table id="billReceiptsTable">
+                <thead>
+                    <tr>
+                        <th>Receipt ID</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Bill receipts will be populated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Bill notifications section as cards -->
+        <section id="bill-notifications">
+            <h2>Bill Notifications</h2>
+            <div id="billNotifications">
+                <!-- Notifications will be populated here as cards -->
+                <div class="card">
+                    <h3>Next Payment Due</h3>
+                    <p>Due Date: <span id="nextDueDate">15/11/2024</span></p>
+                    <p>Amount: <span id="nextDueAmount">$100</span></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script type="module" src="../js/member-dashboard.js"></script>
+</body>
+</html>

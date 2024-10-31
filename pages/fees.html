@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Fees - Gym Management System</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Adjust path based on structure -->
+    <style>
+        /* Styling for the fee management page */
+        .fees-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .fees-container h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        #addFeeBtn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #addFeeBtn:hover {
+            background-color: #45a049;
+        }
+
+        #feesList {
+            margin-top: 20px;
+        }
+
+        .fee-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .fee-card h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .fee-card p {
+            margin: 0;
+            color: #666;
+        }
+
+        .fee-card-buttons {
+            display: flex;
+            gap: 20px; /* This creates space between the buttons */
+        }
+
+        .btn-edit, .btn-delete {
+            background-color: #FF5722;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-edit:hover {
+            background-color: #FF8A50;
+        }
+
+        .btn-delete:hover {
+            background-color: #d43f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="fees-container">
+        <h1>Manage Fees</h1>
+        <button id="addFeeBtn">Add Fee Package</button>
+        <div id="feesList"></div>
+    </div>
+
+    <script type="module" src="../js/fees.js"></script> <!-- JavaScript for fees management -->
+</body>
+</html>

@@ -1,0 +1,10 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyDRVhcXjA4jE3vWS1IDNYGAq7Qx4XbXcgo",
+    authDomain: "gym-manager-df923.firebaseapp.com",
+    databaseURL: "https://gym-manager-df923-default-rtdb.firebaseio.com",
+    projectId: "gym-manager-df923",
+    storageBucket: "gym-manager-df923.appspot.com",
+    messagingSenderId: "159223203312",
+    appId: "1:159223203312:web:a6043fb79e8a5590754935",
+    measurementId: "G-WWT55DSP67"
+  };

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - GYM Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="register-container">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            
+            <button type="submit" id="registerBtn">Register</button>
+        </form>
+        <div id="error-message" class="error-message"></div> <!-- Error message section -->
+    </div>
+
+    <!-- Import auth.js as a module -->
+    <script type="module" src="../js/auth.js"></script> <!-- Adjusted path based on structure -->
+</body>
+</html>

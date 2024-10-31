@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - GYM Management System</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* General body styling */
+      body {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(135deg, #1d3557, #457b9d);
+        color: #333;
+      }
+
+      /* Dashboard container */
+      .admin-dashboard-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Header section */
+      header {
+        background-color: #1d3557;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        font-size: 28px;
+        margin: 0;
+      }
+
+      header button {
+        background-color: #e63946;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      header button:hover {
+        background-color: #d62828;
+      }
+
+      /* Dashboard content styling */
+      .dashboard-content {
+        display: flex;
+        flex-grow: 1;
+      }
+
+      /* Sidebar navigation */
+      .sidebar {
+        width: 250px;
+        background: rgba(255, 255, 255, 0.8);
+        padding-top: 30px;
+        backdrop-filter: blur(10px);
+        border-radius: 0 0 0 10px;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar ul li {
+        padding: 15px 20px;
+      }
+
+      .sidebar ul li a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #1d3557;
+        font-weight: bold;
+        display: block;
+        transition: background 0.3s, padding-left 0.3s;
+      }
+
+      .sidebar ul li a:hover {
+        background-color: #a8dadc;
+        padding-left: 30px;
+      }
+
+      /* Main content area */
+      main {
+        flex-grow: 1;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Section titles */
+      h2 {
+        font-size: 24px;
+        color: #1d3557;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #1d3557;
+        padding-bottom: 10px;
+      }
+
+      /* Members table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 40px;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      table th,
+      table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      table th {
+        background-color: #457b9d;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f1f1f1;
+      }
+
+      table tr:hover {
+        background-color: #e9ecef;
+      }
+
+      table td button {
+        background-color: #1d3557;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      table td button:hover {
+        background-color: #457b9d;
+      }
+
+      /* Section styling */
+      section {
+        margin-bottom: 30px;
+      }
+
+      /* Other sections styling */
+      #create-bill,
+      #view-bill-receipts,
+      #view-bill-notifications,
+      #diet-details {
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      #create-bill input,
+      #diet-details input,
+      #create-bill button,
+      #diet-details button {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      #create-bill button,
+      #diet-details button {
+        background-color: #1d3557;
+        color: white;
+        cursor: pointer;
+      }
+
+      #create-bill button:hover,
+      #diet-details button:hover {
+        background-color: #457b9d;
+      }
+
+      /* Export reports section */
+      #export-report {
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      #exportReportBtn {
+        width: 100%;
+        padding: 12px;
+        background-color: #1d3557;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #exportReportBtn:hover {
+        background-color: #457b9d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-dashboard-container">
+      <header>
+        <h1>Admin Dashboard</h1>
+        <span id="userEmail">admin@gym.com</span>
+        <button id="logoutBtn">Logout</button>
+      </header>
+
+      <div class="dashboard-content">
+        <nav class="sidebar">
+          <ul>
+            <li><a href="admin-dashboard.html">Dashboard</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="fees.html">Fees Management</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="notifications.html">Notifications</a></li>
+          </ul>
+        </nav>
+
+        <main>
+          <section id="members">
+            <h2>Members List</h2>
+            <table id="membersTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="membersList">
+                <!-- Members data will be populated here -->
+              </tbody>
+            </table>
+          </section>
+
+          <section id="create-bill">
+            <h2>Create Bill</h2>
+            <form id="createBillForm">
+              <input
+                type="text"
+                id="billMemberName"
+                placeholder="Member Name"
+                required
+              />
+              <input
+                type="text"
+                id="billAmount"
+                placeholder="Amount"
+                required
+              />
+              <input
+                type="text"
+                id="billDescription"
+                placeholder="Description"
+                required
+              />
+              <button type="submit">Create Bill</button>
+            </form>
+          </section>
+
+          <section id="view-bill-receipts">
+            <h2>View Bill Receipts</h2>
+            <table id="billReceiptsTable">
+              <thead>
+                <tr>
+                  <th>Receipt ID</th>
+                  <th>Member Name</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="billReceiptsList">
+                <!-- Bill receipts will be populated here -->
+              </tbody>
+            </table>
+          </section>
+
+          <section id="view-bill-notifications">
+            <h2>View Bill Notifications</h2>
+            <table id="billNotificationsTable">
+              <thead>
+                <tr>
+                  <th>Notification ID</th>
+                  <th>Member Name</th>
+                  <th>Message</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="billNotificationsList">
+                <!-- Notifications will be populated here -->
+              </tbody>
+            </table>
+          </section>
+
+          <section id="diet-details">
+            <h2>Diet Details</h2>
+            <form id="dietDetailsForm">
+              <input
+                type="text"
+                id="dietMemberName"
+                placeholder="Member Name"
+                required
+              />
+              <input
+                type="text"
+                id="dietPlan"
+                placeholder="Diet Plan"
+                required
+              />
+              <button type="submit">Save Diet Details</button>
+            </form>
+          </section>
+
+          <section id="export-report">
+            <h2>Export Reports</h2>
+            <button id="exportReportBtn">Export Report</button>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>
